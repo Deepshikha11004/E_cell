@@ -1,0 +1,424 @@
+*{
+    box-sizing: border-box;
+    
+}
+
+body {
+    padding: 20px;
+    background:black;
+    /* background: linear-gradient(to bottom, #000066 0%, #ff0000 100%); */
+}
+
+#head{
+    border: 20px solid pink;
+    padding: 30px;
+    height: 200px;
+    text-align: center;
+    background:black;
+    /* color:white; */
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    /* //flexible responsive layout wihtout float or positioning. */
+	align-items: center;
+	justify-content: center;
+}
+
+#head-content{
+    position: relative;
+
+}
+#head-content h2 {
+	color: yellow;
+    font-size: 50px;
+	position: absolute;
+	transform: translate(-50%, -50%);
+    /* means element should be moved 50%of its own width to left and 50% of its height */
+}
+
+#head-content h2:nth-child(1) {
+	color: transparent;
+	-webkit-text-stroke: 2px yellow; 
+    /* outline around text */
+}
+
+#head-content h2:nth-child(2) {
+	color: yellow;
+	animation: animate 4s ease-in-out infinite;
+    /* ease-in-out means animation will start slow,acc in middle,and slow down again at end. */
+}
+
+@keyframes animate {
+	0%,
+	100% {
+		clip-path: polygon(
+			0% 45%,
+			16% 44%,
+			33% 50%,
+			54% 60%,
+			70% 61%,
+			84% 59%,
+			100% 52%,
+			100% 100%,
+			0% 100%
+		);
+	}
+
+	50% {
+		clip-path: polygon(
+			0% 60%,
+			15% 65%,
+			34% 66%,
+			51% 62%,
+			67% 50%,
+			84% 45%,
+			100% 46%,
+			100% 100%,
+			0% 100%
+		);
+	}
+}
+
+
+.leftcol{
+    float: left;
+    position:relative;
+    width:50%;
+    
+}
+.rightcol{
+    float:left;
+    width: 50%;
+    padding-left:20px;
+}
+
+.photo-section{
+    background: black;
+    /* background: linear-gradient(to bottom, #000066 0%, #ff0000 100%); */
+    width: 100%;
+    padding: 20px;
+}
+
+.about-section{
+    height: 900px;
+    background: linear-gradient(to bottom, #9900ff 0%, #ff6699 100%);
+    padding: 20px;
+    margin-top: 20px;
+    color: black;
+}
+
+.about-section h2{
+    font-size: 50px;
+    
+    /* animation-timing-function: linear; */
+}
+
+
+.about-section p{
+    font-size: 20px;;
+}
+
+.overlayimg{
+    width: 100%;
+    height:900px;
+    display:block;
+    filter: saturate(7);
+
+}
+
+
+.fadeimg{
+    position:absolute;
+
+    top:0;
+    bottom: 0;
+    left:0;
+    right:0;
+    height:100%;
+    width:100%;
+    opacity:0;
+    transition: .5 s ease;
+    
+    background: linear-gradient(to bottom, #9900ff 0%, #ff6699 100%);
+}
+
+.leftcol:hover .fadeimg{
+    opacity: 0.5;
+}
+
+#overlay-text{
+background:transparent;
+    height:100%;
+    width:100%;
+    position:absolute;
+    top:50%;
+    left:40%;
+    font-size: 50px;
+    
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+#hob-sec{
+    margin-top: 10px;
+    border: pink;
+    border-radius: 20px;
+}
+
+#hobby-text{
+   
+position: relative;
+height: 100px;
+color: black;
+    padding: 10px;
+     font-size: 40px;
+     text-align: center;
+     background: linear-gradient(to bottom, #003300 0%, #6600cc 100%);
+     display: block;
+     margin-bottom: 30px;
+     
+ }
+
+
+ #hobby-text span{
+    position: relative;
+    display: inline-block;
+    font-size: 40px;
+    color: #fff;
+    text-transform: uppercase;
+    animation: flip 2s infinite;
+    animation-delay: calc(.2s * var(--i));
+
+ }
+ @keyframes flip {
+    0%,80% {
+      transform: rotateY(360deg) 
+    }
+  }
+
+#hobbies{
+    /* margin-top: auto; */
+    padding: 30px;
+  background: linear-gradient(to bottom, #6699ff 0%, #cc33ff 100%);
+    width:100%;
+    margin:auto;
+    text-align:center;
+    padding-top:100px;
+}
+
+
+
+
+ #hobbies h1{
+    font-size:40px;
+    font-weight:900;
+ }
+
+#coding p{
+    color: purple;
+     font-size:20px;
+    font-weight:400;
+    line-height:22px;
+    padding:10px; 
+}
+
+#dancing p{
+    color: purple;
+   
+    font-size:20px;
+    font-weight:400;
+    line-height:22px;
+    padding:10px; 
+}
+
+#sketch p{
+    color: purple;
+  
+    font-size:20px;
+    font-weight:400;
+    line-height:22px;
+    padding:10px; 
+}
+
+#yoga p{
+    color: purple;
+  
+    font-size:20px;
+    font-weight:400;
+    line-height:22px;
+    padding:10px; 
+}
+
+
+#hobby-row{
+    margin-top:5%;
+    display:flex;
+    justify-content:space-between;
+}
+
+
+#coding, #dancing, #sketch, #yoga{
+    flex-basis:40%;
+   color:#000066;
+   background: linear-gradient(to bottom, #66ffff 0%, #ff99ff 100%);
+    border-radius:10px;
+    /* background-color: antiquewhite; */
+    margin-bottom:5%;
+    padding:20px 12px; 
+    box-sizing:border-box;
+    transition:0.5s;
+    box-shadow:  4px 8px 16px 0 rgba(0, 0, 0, 0.2), 10px 16px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+.row2{
+    /* background-color: rgba(210, 210, 210, 0.5); */
+    /* border: 1px solid #000; */
+    padding: 0.5rem;
+    display: flex;
+  }
+
+#left{
+    float: left;
+    width:50%;
+}
+#right{
+    float: left;
+    width:50%;
+    padding-left: 20px;
+}
+
+#slide1{
+        background: white;
+        width: 100%;
+        padding: 20px;
+        height:400px;
+        padding: 20px;
+        padding-top:100px;
+        background-image: url("i15.jpg");
+        background-size: 100% 100%;
+        background-position: center;
+        margin-top:50px;
+        margin-bottom: 50px;
+        padding-bottom: 50px;
+        position: absolute;
+        box-shadow: 1px 2px 10px 5px blue;
+        animation: slider 9s infinite linear;
+    }
+    
+    @keyframes slider {
+        0%{
+            background-image: url(i11.jpg);
+            /* background-size: 100% 100%; */
+        }
+        35%{
+            background-iamge:url(i16.jpg);
+            /* background-size: 100% 100%; */
+        }
+        75%{
+            background-image: url(i14.jpg);
+            /* background-size: 100% 100%; */
+        }
+        
+    }
+
+#slide2{
+   
+        background: white;
+      
+        width: 100%;
+        padding: 20px;
+     
+        height:400px;
+    
+        padding-top:100px;
+        background-image: url("i15.jpg");
+        background-size: 100% 100%;
+        background-position: center;
+        margin-top:50px;
+        margin-bottom: 50px;
+        padding-bottom: 50px;
+        position: absolute;
+        box-shadow: 1px 2px 10px 5px blue;
+        animation: slider 9s infinite linear;
+     margin-left: 20px;
+
+    }
+    
+    @keyframes slider {
+        0%{
+            background-image: url(i11.jpg);
+            /* background-size: 100% 100%; */
+        }
+        35%{
+            background-iamge:url(i16.jpg);
+            /* background-size: 100% 100%; */
+        }
+        75%{
+            background-image: url(i14.jpg);
+            /* background-size: 100% 100%; */
+        }
+        
+    }
+
+
+
+#foot {
+        border:pink ;
+        border-radius:3px;
+       
+        padding: 20px;
+        text-align: center;
+        background: pink;
+        margin-top: 80px;
+        margin: 20px;
+        color: black;
+        font: 700 normal 2.5em 'tahoma';
+        text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324;
+        /* clip-path: circle(50%); */
+        animation-name: example;
+       animation-duration: 4s;
+       animation-iteration-count: infinite;
+      }
+
+      @keyframes example {
+        0%   {background-color: rgb(15, 173, 241);}
+        25%  {background-color: purple;}
+        50%  {background-color: blue;}
+        75%  {background-color:pink;}
+        100% {background-color: green;}
+      }
+
+#coding:hover,#dancing:hover,#sketch:hover,#yoga:hover {
+        /* Start the shake animation and make the animation last for 0.5 seconds */
+        animation: shake 0.5s;
+      
+        /* When the animation is finished, start again */
+        animation-iteration-count: infinite;
+      }
+      
+      @keyframes shake {
+        0% { transform: translate(1px, 1px) rotate(0deg); }
+        10% { transform: translate(-1px, -2px) rotate(-1deg); }
+        20% { transform: translate(-3px, 0px) rotate(1deg); }
+        30% { transform: translate(3px, 2px) rotate(0deg); }
+        40% { transform: translate(1px, -1px) rotate(1deg); }
+        50% { transform: translate(-1px, 2px) rotate(-1deg); }
+        60% { transform: translate(-3px, 1px) rotate(0deg); }
+        70% { transform: translate(3px, 1px) rotate(-1deg); }
+        80% { transform: translate(-1px, -1px) rotate(1deg); }
+        90% { transform: translate(1px, 2px) rotate(0deg); }
+        100% { transform: translate(1px, -2px) rotate(-1deg); }
+      }
+
+
+
+@media screen and (max-width: 800px) {
+        .leftcol, .rightcol {   
+          width: 100%;
+          padding: 0;
+        }
+      }
